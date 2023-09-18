@@ -7,8 +7,14 @@ namespace Arithmetic_Operators
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            double circumference = circumference(2);
-            Console.WriteLine($"Circumference with radius 2: {circumference}");
+            double circumf = circumference(2);
+            Console.WriteLine($"Circumference with radius 2: {circumf}");
+            Console.WriteLine($"Area of a circle with radius 2: {area(2)}");
+            Console.WriteLine($"Whole number division of 4/3: {wholenumberdivision(4, 3)}");
+            Console.WriteLine($"Pythagoras on a triangle with 3, 4 size lengths: {pythagoras(3, 4)}");
+            books();
+            Console.WriteLine($"Number of 512b blocks needed to store 512KiB: {storageblocks(512)}");
+            pocketmoney();
         }
 
         static double circumference(double radius)
@@ -50,20 +56,21 @@ namespace Arithmetic_Operators
         static void books()
         {
             Console.WriteLine("How many students");
-            int students = Console.ReadLine();
+            string? studentsStr = Console.ReadLine();
+            int students = int.Parse(studentsStr);
             Console.WriteLine("How many books");
-            int books = Console.ReadLine();
+            string? booksStr = Console.ReadLine();
+            int books = int.Parse(booksStr);
             int booksperstudent = books / students;
             int booksremainder = books % students;
-            Console.WriteLine($"{booksperstudent} books per student");
-            Console.WriteLine($"{booksremainder} books left over");
+            Console.WriteLine($"{booksperstudent} book(s) per student");
+            Console.WriteLine($"{booksremainder} book(s) left over");
         }
 
         static int storageblocks(int size)  //Size in kibibytes
         {
             size *= 2;
-            int numblocks = Math.Ceiling(size);
-            return numblocks;
+            return size;
         }
 
         static void pocketmoney()
